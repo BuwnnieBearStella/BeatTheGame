@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Screenshot 2021-07-26 172149.png" type="Texture" id=4]
+[ext_resource path="res://Screenshot 2021-08-02 171503.png" type="Texture" id=5]
+[ext_resource path="res://Level_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Screenshot 2021-08-09 183431.png" type="Texture" id=7]
+[ext_resource path="res://Screenshot 2021-08-09 182245.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 500, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 51.1699, 113.608 )
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -1245217, 3, 0, -458755, 3, 0, -65557, 3, 0, 65613, 3, 0, 327733, 3, 0, 458715, 3, 0, 393269, 3, 0, 720893, 2, 0, 852043, 3, 0, 983014, 3, 0, 1048529, 3, 0, 1048570, 3, 0, 983077, 3, 0, 1114065, 3, 0, 1245171, 3, 0, 1179691, 3, 0, 1441773, 3, 0, 1376306, 3, 0, 1638384, 3, 0, 1638398, 2, 0, 1572920, 3, 0, 1703900, 3, 0, 1638402, 2, 0, 1638404, 2, 0, 1638412, 2, 0, 1638422, 2, 0, 1638429, 2, 0, 1638436, 2, 0, 1638437, 2, 0, 1834999, 3, 0, 1769522, 3, 0, 1966075, 3, 0, 1966083, 4, 0, 1966091, 4, 0, 1966099, 3, 0, 1966107, 3, 0, 1966115, 4, 0, 1966123, 3, 0, 2228198, 3, 0, 2293833, 3, 0 )
+
+[node name="Angry Face" type="Sprite" parent="TileMap"]
+position = Vector2( 498.193, 296.598 )
+scale = Vector2( 0.174517, 0.205403 )
+texture = ExtResource( 8 )
+
+[node name="Screenshot 2021-08-09 183431" type="Sprite" parent="TileMap"]
+position = Vector2( 570.071, 370.021 )
+texture = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 336.012, 368.321 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 358, 530 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 129, 302 )
+texture = ExtResource( 3 )
+
+[node name="Angry Face" type="Sprite" parent="."]
+position = Vector2( 405.986, 97.4754 )
+texture = ExtResource( 4 )
+
+[node name="Screenshot 2021-08-02 171503" type="Sprite" parent="."]
+position = Vector2( 756.888, 363.912 )
+texture = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Screenshot 2021-08-02 171503"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screenshot 2021-08-02 171503/Area2D"]
+position = Vector2( 1.05945, 5.29727 )
+shape = SubResource( 2 )
+
+[node name="Angry Face2" type="Sprite" parent="."]
+position = Vector2( 133.738, 128.674 )
+scale = Vector2( 0.193236, 0.183497 )
+texture = ExtResource( 8 )
+
+[node name="Level_2" parent="." instance=ExtResource( 6 )]
+[connection signal="script_changed" from="Player" to="Player" method="Level_2"]
+[connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="Player" method="_on_Area2D_body_shape_entered"]
+[connection signal="body_entered" from="Screenshot 2021-08-02 171503/Area2D" to="Player" method="_on_Area2D_body_entered"]

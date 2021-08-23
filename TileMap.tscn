@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://atlas.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 48, 0, 48 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=3]
+2/name = "atlas.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 0, 128, 80 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "atlas.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 128, 96, 128, 48 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 1 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "atlas.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 160, 128, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 2 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 720893, 2, 0, 1048570, 3, 0, 983077, 3, 0, 1245171, 3, 0, 1179691, 3, 0, 1441773, 3, 0, 1376306, 3, 0, 1638384, 3, 0, 1638398, 2, 0, 1572920, 3, 0, 1638402, 2, 0, 1638404, 2, 0, 1638412, 2, 0, 1638422, 2, 0, 1638429, 2, 0, 1638436, 2, 0, 1638437, 2, 0, 1834999, 3, 0, 1769522, 3, 0, 1966075, 3, 0, 1966083, 4, 0, 1966091, 4, 0, 1966099, 3, 0, 1966107, 3, 0, 1966115, 4, 0, 1966123, 3, 0 )
